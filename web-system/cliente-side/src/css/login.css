@@ -1,0 +1,104 @@
+*{
+    margin: 0;  padding: 0;     box-sizing: border-box;
+    font-family: sans-serif;    
+    border: none;
+    height: auto;
+}
+
+body{
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 0px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#password_img{
+    width: 18px;
+    background-color: #fff;
+}
+#logo{
+    background-color:#fff;
+    width: 30%;
+    position: relative;
+    float: left;
+}
+#form {
+   
+    padding-top: 5px;
+    width: 100%;
+    height: 100%;
+    
+   
+}
+.card{
+   
+    
+    box-shadow: 0 0 1em #333;
+    margin: auto;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 3px;
+}
+h2{background-color: #fff; color: #5942e2;}
+.card-top {
+    background-color: #fff;
+    text-align: center;
+}
+.card-group{
+    margin-bottom: 10px;
+    background-color: #fff;
+    
+}
+.card-group > label{
+    width: 100%;
+    color: #323232;
+    display: block;
+    background-color: #fff;
+}
+.card-group > input{
+    border-bottom: 2px solid #323232;
+    outline: 0;
+    width: 100%;
+    height: 25px;
+    padding:10px;
+    margin-bottom: 40px;
+    font-size: .9rem;
+    background-color: #fff;
+}
+
+.card-group > button{
+    background-color: #5942e2;
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px;
+    color: #fff;
+    border: 0px;
+    outline: 0;
+    cursor: pointer;
+}
+
+.imglogin{ 
+    background-color: #fff;
+    width: 100px;
+}
+title{
+    color:#ccc;
+}
+.btn2 a{
+    text-decoration: none;
+    background-color: #5942e2;
+    color: #fff;
+}
+#lg_google{
+    width: 50px;
+    height: auto;
+    background-color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+    filter: saturate(190%);
+
+}
+

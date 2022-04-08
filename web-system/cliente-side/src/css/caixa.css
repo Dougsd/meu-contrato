@@ -1,0 +1,20 @@
+#caixa{
+    width: 300px;
+    height: 100px;
+    background-color: indigo;
+    font-size: 10pt;
+    font-family:Tahoma;
+    color: #ddd;
+    font-weight: bold;
+   
+}
+.btn{
+    padding: 5px;
+}
+#container{
+    margin: auto;
+    width: calc(2480px/4);
+    height:auto;
+    box-shadow: 0 0 1em rgb(109, 107, 107);
+    padding:3cm 2.5cm 3cm 2.5cm;
+}

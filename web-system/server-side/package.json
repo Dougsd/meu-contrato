@@ -1,0 +1,31 @@
+{
+  "name": "server-side",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Provedor de serviços para plataforma meu contrato.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
+  },
+  "author": "Douglas Schmitz Dupski",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "firebase-admin": "^10.0.0",
+    "fs": "0.0.1-security",
+    "geoip-lite": "^1.4.2",
+    "googleapis": "^92.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.7.2",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "pdf-signer": "^1.1.4",
+    "public-ip": "^4.0.4",
+    "util": "^0.12.4"
+  }
+}

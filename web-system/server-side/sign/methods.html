@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #ddd;
+            width: 360px;
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+            text-align: center;
+            width: 100%; 
+            font-size: 20pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        a{
+            padding: 10px 0px 10px 0px;
+            margin-bottom: 5px;
+            border-radius: 5pt;
+            width: 100%;
+            background-color: #aaa;
+            text-decoration: none; 
+            text-align: center;
+            display: inline-block;
+            color:#333; 
+            font-size: 15pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+        label{
+            padding: 10px 0px 10px 0px;
+            margin-bottom: 5px;
+            border-radius: 5pt;
+            width: 340px;
+            background-color: #aaa;
+            text-decoration: none; 
+            text-align: center;
+            display: inline-block;
+            color:#333; 
+            font-size: 15pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        input{
+            display: none;
+        }
+        p{
+            color:#333;
+            font-size: 12pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif; 
+            width: 100%;
+        }
+        h2{
+            width: 100%; 
+            color:#333;
+            font-size: 12pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin-left: 10px;
+        }
+        h4{
+            margin-left: 10px;
+        }
+        #pass{
+            display: block;
+            font-size: 15pt;
+            width: 300px;
+            margin-left: 10px;
+            float: left;
+        }
+        #title_pass{
+            display: inline-block;
+            width:fit-content;
+            font-size: 10pt;
+            background-color: #ddd;
+            margin-left: 10px;
+        }
+        #ass{
+            margin-bottom: 5px;
+            border-radius: 5pt;
+            display: inline-block;
+            padding: 10px 0px 10px 0px;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 340px;
+            border: none;
+            background-color: #aaa;
+            text-decoration: none; 
+            text-align: center;
+            display: inline-block;
+            color:#333; 
+            font-size: 15pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+
+    </style>
+    <script defer src="../js/methods.js"></script>
+</head>
+<body >
+    
+    <div class="formulario">
+        <h4 id="sad_name">SadName</h4>
+        <h2>Selecione um dos metodos de assinaturas:</h2>
+        <!-- <a href="">Selfie e Documento com foto</a> -->
+        <h4>Certificado Digital:</h4>
+        <label for="cert">Selecione um Certificado</label>
+        <input id="cert" type="file">
+        <label id='title_pass' for="pass">Senha do certificado:</label>
+        <input id="pass" type="password">
+        <!-- <a href="" id="cert">Certificado Digital</a> -->
+        <input id="ass" type="button" value="Assinar">
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link async rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/sys.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-functions.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script defer src="../js/config_firebase.js"></script>
+    <script defer src="../js/database.js"></script>
+    
+    <script async src="../js/files.js"></script>
+    <script defer src="../js/menuLateral.js"></script>
+        
+    <!-- Estas CDNs devem ser carregadas nessa ordem -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmbzN2GCTcVJ4QMrejwY0SaYwZf0uBOMw">
+    </script>
+    
+    <script type="application/javascript" src="../js/pre_assign.js"></script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+    <!-- ordem cdns -->
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <!--User profile-->
+    <script defer src="../js/sys.js"></script>
+    <div class="user_info" id="user_info">
+        <div class="profile_img"><img id="img_perfil" src="../img/user.old.png"></div>
+        <div class="dados">
+            <br>
+            <p id="profile_email">schmitz.dupski@unemat.br</p>
+            <p id="profile_name">Douglas Schmitz Dupski</p>
+        </div>
+
+       
+    </div>
+    <!-- Navegador responsivo -->
+        <!-- <div class="topnav" id="myTopnav">
+            <a href="#home" class="active"></a>
+            <a href="#news">Assinar</a>
+            <a href="#contact">Contact</a>
+            <a href="https://efcaz-f8ca9.web.app" onclick="auth.signOut()">Sair</a>
+            <a href="javascript:void(0);" class="icon"  id="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </div> -->
+
+    <div class="containerBar">
+        <!-- Menu Lateral -->
+        <div class="menuLateral">
+            <a href="#Modelos" id="modelos">Modelos</a>
+            <a href="#Assinar" id="assinar">Assinar</a>
+        </div>
+        <!--Painel-->
+            <div class="painel" id="painel1">
+                <div class="ct">
+                    <img src="./img/word.svg">
+                    <p>Prestação de Serviços e Honorários Advocatícios</p>           
+                    <button onclick="downloadFile('Contrato de Prestação de Serviços e Honorários Advocatícios.docx')">Download</button>
+                    
+                </div>
+                <div class="ct">
+                    <img src="../img/word.svg">
+                    <p>Coworking</p>        
+                        <button onclick="downloadFile('Modelo contrato coworking.docx')">Download</button>
+                   
+                </div>
+                <div class="ct">                 
+                    <img src="../img/word.svg">
+                    <p>Compra e Venda</p>   
+                    <button onclick="downloadFile('Modelo contrato preliminar.docx')">Download</button>
+                </div>
+               
+            </div>
+
+            <div class="painel" id="painel2" class='item2'>
+                <div class="area_input">
+                    <label for="get_file_img">Selecione um documento:</label>
+                    <img id="get_file_img"  src="../img/upload.png"  onclick="document.getElementById('doc').click()" alt="">
+                    <input id="doc" type="file" style="display: none;" >
+                    <p id="file_name"></p>
+                </div>
+                <div class="signatarios">
+                    <label for="">Adicionar signatários</label>
+                    
+                    <div class="selectRadios">
+                       <label for="testemunha"><input id="testemunha"type="radio" name="tipoass">Testemunha</label>
+                       <label for="contratado"><input id="contratado" type="radio" name="tipoass">Contratado</label>
+                       <label for="contratante"><input id="contratante" type="radio" name="tipoass" checked>Contratante</label>
+                    </div>
+                    <div class="forname">
+                         <input id="input_name1" type="name" placeholder="Nome completo">
+                    </div>
+                    <input id="input_mail1" type="mail" placeholder="Email"> <button id="btn-add" type="click">Adicionar</button>
+                    <div class="participations" id="participations">   
+                    </div>
+                    <div>
+                        <button id="btn-enviar" type="click">Solicitar assinaturas</button>
+                    </div>
+                </div>
+                
+
+            </div>
+    </div>  
+
+</body>
+
+</html>

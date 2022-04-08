@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script defer src="../js/config_firebase.js"></script>
+    <script defer src="../js/database.js"></script>
+    <script defer src="..//js/auth.js"></script>
+    <form id="form" action="">
+        <div class="card">
+            <div class="card-top">
+                <!--<img id="logo" src="./img/logo.svg" alt="">-->
+                <img class="imglogin" src="../img/user.png" alt="">
+            </div>
+
+            <div class="card-group">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Digite seu email" id="mail" value="" required>
+            </div>
+
+            <div class="card-group">
+                <label>Senha</label>
+                <input type="password" name="senha" placeholder="Digite sua Senha" id="pass" value="" required
+                    minlength="6" maxlength="30" size="10">
+            </div>
+
+
+            <div class="card-group btn">
+                <button type="submit" id="btn-login">Acessar</button>
+            </div>
+            <div class="card-group btn2">
+                <button type="button"> <a href="cd.html">Cadastre-se</a></button>
+            </div>
+
+            <div class="card-group">
+                <label>Mais opções para login:</label>
+                <img src="../img/login_google.svg" alt="Login_google" id="lg_google">
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

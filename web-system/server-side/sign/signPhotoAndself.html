@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button{
+            padding: 10px 0px 10px 0px;
+            margin-bottom: 5px;
+            border-radius: 5pt;
+            width: 100%;
+            background-color: #aaa;
+            text-decoration: none; 
+            text-align: center;
+            display: inline-block;
+            color:#333; 
+            font-size: 15pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+        
+        
+        input{
+            width: 360px;
+            height: auto;
+            margin-bottom: '10px';
+        }
+        video{
+            width: 360px;
+            height: auto;
+            margin-bottom: '10px';
+        }
+        body{
+            background-color: #ddd;
+            width: 360px;
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1{
+            text-align: center;
+            width: 100%; 
+            font-size: 20pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        a{
+            padding: 10px 0px 10px 0px;
+            margin-bottom: 5px;
+            border-radius: 5pt;
+            width: 100%;
+            background-color: #aaa;
+            text-decoration: none; 
+            text-align: center;
+            display: inline-block;
+            color:#333; 
+            font-size: 15pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+        p{
+            color:#333;
+            font-size: 12pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif; 
+            width: 100%;
+        }
+        h2{
+            width: 100%; 
+            color:#333;
+            font-size: 12pt; 
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+    </style>
+    
+</head>
+<body >
+    <script>
+        var width = 360    // We will scale the photo width to this
+        var height = 0     // This will be computed based on the input stream
+        var streaming = false
+        var video = null
+        var canvas = null
+        var photo = null
+        var startbutton = null
+  // GET PERMISSIONS IN DIPOSITIVES
+        async function getMedia() {
+            let stream = null;
+            try {
+                navigator.mediaDevices.enumerateDevices()
+                .then(function(devices) {
+                devices.forEach(function(device) {
+                if(device){
+                    //    window.alert(device)
+                }
+                });
+                })
+                .catch(function(err) {
+                    console.log(err.name + ": " + err.message);
+                });
+                stream = await navigator.mediaDevices.getUserMedia({video:true, audio:false})
+                canvas = document.getElementById("canvas")
+                context = canvas.getContext("2d")
+                video = document.getElementById('video')
+                video.srcObject = stream
+                video.play()
+                
+            } catch(err) {
+                console.log('Error:',err)
+            }
+        }
+    getMedia()
+    async function takepicture() {
+        var context = canvas.getContext('2d')
+        height = video.videoHeight / (video.videoWidth/width)
+        if (width) {
+            canvas.width = width
+            canvas.height = height
+            context.drawImage(video, 0, 0, width, height)
+            var data = await canvas.toDataURL('image/png',1)
+            video.style.display = 'none'
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://www.developer.local:443/ass/sap', true);
+            xhr.onload = function () {
+            // Requisição finalizada. Faça o processamento aqui.
+            };
+            xhr.send(JSON.stringify(data))
+
+            } else {
+                window.alert('Impossivel obter selfie')
+            }
+    }
+    </script>
+    <h1>Convite para Assinatura digital</h1>
+    <div class="formulario">
+        <h2>Tire um selfie:</h2>
+        <video autoplay muted id="video" src=""></video>
+        <canvas id="canvas"></canvas>
+        <button id='capture' onclick="takepicture()">Tirar Selfie</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete seu cadastro</title>
+    <link rel="stylesheet" href="./css/cp.css">
+    <link rel="stylesheet" href="./css/loading.css">
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script defer src="./js/config_firebase.js"></script>
+    <script defer src="./js/database.js"></script> 
+     <script defer src="./js/upFoto.js"></script>  
+    <script defer src="./js/cp.js"></script>
+    
+    <div id="loading" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div id="main-container">
+        <h1>Complete seu cadastro</h1>
+        <form id="cp-form">
+
+            <!--Nome-->
+            <div class="half-box spacing">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome"value="">
+            </div>
+            <!--Sobrenome-->
+            <div class="half-box">
+                <label for="name">Sobrenome</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome"value="">
+            </div>
+            <!--Número de telefone-->
+            <div class="half-box spacing" id="telefone">
+                <label for="numberPhone">Telefone</label>
+                <input type="tel" name="telefone" id="input_telefone" placeholder="(65)0000-0000" value="">
+            </div>
+            <!--Card-->
+            <div id="file">
+                <div id="dir">
+                    <!--CPF-->
+                    <label id="label_cpf" for="CPF">CPF</label>
+                    <input id="input_cpf" type="text" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
+                    <label id="label_file" for="file">Documento com foto</label>
+                    <input id="input_file" type="file" onchange="getFile()" name="img" accept="image/*" required>
+                    <label id="input_file2" for="input_file"></label>
+                </div>
+               <div id="esq"> 
+                    <img id="label_img" src="./img/user.old.png" alt="">
+               </div>
+                
+            </div>
+
+            <div class="full-box">
+                <input type="submit" id="btn-submit" value="Enviar" onclick="">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
